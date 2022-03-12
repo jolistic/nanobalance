@@ -1,12 +1,23 @@
+import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
+import 'package:flutter_js/flutter_js.dart';
 
-void main() => runApp(const MaterialApp(
+void main() => runApp(MaterialApp(
       home: NanoBalance(),
     ));
 
+void addFromJs(JavascriptRuntime jsRuntime,
+String address) async {
+    String balance = await rootBundle.loadString("/assets/getBalance.js");
+    final jsResult = jsRuntime.evaluate(balance + """add($nanoAddress)""");
+    final jsStringResult = jsResult.stringResult;
+return(jsStringResult); //6:48 https://www.youtube.com/watch?v=13v_BwZcCLk
+}
+
 class NanoBalance extends StatefulWidget {
-  const NanoBalance({Key? key}) : super(key: key);
+  final JavascriptRuntime jsRuntime = getJavascriptRuntime();
+  NanoBalance({Key? key}) : super(key: key);
 
   @override
   State<NanoBalance> createState() => _NanoBalanceState();
