@@ -37,6 +37,13 @@ dependencies:
   google_fonts: ^2.3.1
   flutter_neumorphic: ^3.2.0
   flutter_js: ^0.5.0+6
+  ffi: ^1.1.2
+  js: any
+  async: ^2.8.2
+  flutter_webview_plugin: ^0.4.0
+  json_rpc_2: ^3.0.1
+  pedantic: ^1.11.1
+  web_socket_channel: ^2.2.0
 
 dev_dependencies:
   flutter_test:
@@ -61,8 +68,8 @@ flutter:
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
-  assets:
-    - assets/
+  # assets:
+  #   - assets/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

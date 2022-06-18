@@ -1,5 +1,8 @@
 {
   "dependencies": {
+    "firebase": "^9.8.3",
+    "websocket": "^1.0.34",
+    "ws": "^8.8.0",
     "xhr2": "^0.2.1"
   }
 }
